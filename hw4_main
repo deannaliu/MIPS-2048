@@ -1,0 +1,13 @@
+.include "hw4.asm"
+
+.data
+matrix: .space 60 # 5 x 3 matrix of 4-byte words
+rows: .word 5
+columns: .word 3
+
+_start:
+	la $a0, matrix 
+	lw $a1, rows    # number of rows
+	lw $a2, columns # number of columns
+	jal clear_board
+	
